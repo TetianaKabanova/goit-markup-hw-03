@@ -10,6 +10,8 @@
   --footer-contacts-text: rgba(255, 255, 255, 0.6);
   --secondary-background-color: #2f303a;
   --team-section-bgc: #f5f4fa;
+  --boder-color: #eeeeee;
+  --card-gap: 30px;
 }
 
 h1,
@@ -40,6 +42,8 @@ address {
 }
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 button {
   cursor: pointer;
@@ -60,6 +64,11 @@ body {
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 .visually-hidden {
@@ -88,11 +97,16 @@ body {
 }
 .logo2 {
   color: var(--logo-color);
-  margin-right: 93px;
 }
 
 .logo3 {
   color: var(--main-color);
+}
+
+.logo {
+  padding-top: 24px;
+  padding-bottom: 25px;
+  margin-right: 93px;
 }
 
 /* Menu */
@@ -124,10 +138,15 @@ body {
 
 /* Header contacts */
 
+.page-header {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #ececec;
+}
+
 .page-header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .contact-mail,
@@ -145,6 +164,11 @@ body {
 .contact-phone-number:hover,
 .contact-phone-number:focus {
   color: var(--accent-color);
+}
+
+.contact {
+  display: flex;
+  margin-left: auto;
 }
 .contact-mail {
   margin-right: 50px;
@@ -164,8 +188,16 @@ body {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--main-color);
+  margin-bottom: 30px;
 }
 
+.hero-section-nav {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 200px;
+  padding-top: 200px;
+}
 /* Button */
 
 .modal-open-btn {
@@ -176,6 +208,7 @@ body {
   color: var(--main-color);
   background: var(--background-active-btn);
   border-radius: 4px;
+  padding: 10px 32px;
 }
 .modal-open-btn:hover,
 .modal-open-btn:focus {
@@ -186,11 +219,23 @@ body {
 
 /* Features */
 
+.advantages-section {
+  padding-top: 94px;
+}
+.features {
+  display: flex;
+  gap: 30px;
+}
+
+.feature-item {
+  flex-basis: calc((100%-90px) / 4);
+}
 .feature-title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .feature-descr {
@@ -198,7 +243,26 @@ body {
   color: var(--secondary-text-color);
 }
 
+/* About */
+
+.about-section {
+  padding-top: 94px;
+}
+
+.boxes {
+  display: flex;
+  gap: 30px;
+}
+
+.box-item {
+  flex-basis: calc((100%-60px) / 3);
+}
 /* Team */
+
+.team {
+  display: flex;
+  gap: 30px;
+}
 
 .team-section {
   background-color: var(--team-section-bgc);
@@ -209,18 +273,40 @@ body {
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .team-card-title {
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 0.03em;
+  margin-bottom: 10px;
+  text-align: center;
 }
-.team-card-descr,
-.project-descr {
+.team-card-descr {
   font-size: 16px;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
+  text-align: center;
+}
+
+.team-item {
+  flex-basis: calc((100%-90px / 4));
+  border: 1px solid var(--boder-color);
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team-card-text {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.team-card {
+  background-color: var(--main-color);
 }
 
 /* Footer */
@@ -244,8 +330,13 @@ body {
 }
 .footer-section {
   background-color: var(--secondary-background-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
+.address-section {
+  margin-top: 20px;
+}
 /* Portfolio page */
 
 .filter-open-btn {
@@ -254,7 +345,12 @@ body {
   line-height: 1.63;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
-  background-color: var(--main-color);
+  background-color: var(--team-section-bgc);
+  display: flex;
+  border-radius: 4px;
+  border: 0;
+  margin-bottom: 50px;
+  padding: 6px 22px;
 }
 .filter-open-btn:hover,
 .filter-open-btn:focus {
@@ -268,7 +364,41 @@ body {
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--primary-text-color);
+  margin-bottom: 4px;
+  margin-right: auto;
 }
 .project-descr {
   line-height: 1.88;
+  margin-right: auto;
 }
+
+.filters-items {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.project-item {
+  flex-basis: calc(100% -60px / 3);
+}
+
+.project-descr {
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  color: var(--secondary-text-color);
+}
+
+.project-item-descr {
+  padding: 20px 24px;
+  border: 1px solid var(--boder-color);
+}
+
+/* .project-card {
+  border: 1px solid var(--boder-color);
+} */
